@@ -11,17 +11,31 @@
     <script type="module" src="/src/main.jsx"></script>
     <div class="container">
       <div class="pagination">
-        <button class="btn1"> <img src="arrow.png">prev</button>
+        <button class="btn1"><img src="arrow.png" />prev</button>
         <ul>
-          <li class="link" value="1">1</li>
-          <li class="link" value="2">2</li>
-          <li class="link" value="3">3</li>
-          <li class="link" value="4">4</li>
-          <li class="link" value="5">5</li>
-          <li class="link" value="6">6</li>
+          <li class="link active" value="1" onclick="activeLink()">1</li>
+          <li class="link" value="2" onclick="activeLink()">2</li>
+          <li class="link" value="3" onclick="activeLink()">3</li>
+          <li class="link" value="4" onclick="activeLink()">4</li>
+          <li class="link" value="5" onclick="activeLink()">5</li>
+          <li class="link" value="6" onclick="activeLink()">6</li>
         </ul>
-        <button class="btn2">next <img src="arrow.png"></button>
+        <button class="btn2">next <img src="arrow.png" /></button>
       </div>
     </div>
+    <script>
+
+      let link=document.getElementsByClassName("link");
+
+      let currentValue = 1;
+
+      function activeLink(){
+        for(1 of link){
+          1.classList.remove("active");
+        }
+        event.target.classList.add("active")
+        currentValue = event.target.value;
+      }
+    </script>
   </body>
 </html>
